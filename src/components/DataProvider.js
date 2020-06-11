@@ -212,7 +212,8 @@ const DataProvider = () => {
 
     const postData = async (data) => {
         console.log(data)
-        await fetch('http://localhost:8080/createCharacter', {
+        const createCharacterUrl = process.env.NODE_ENV !== 'production' ? 'http://localhost:8080/createCharacter' : 'https://the-law-of-destiny.herokuapp.com/createCharacter'
+        await fetch(createCharacterUrl, {
             body: JSON.stringify(data),
             cache: 'no-cache',
             headers: {

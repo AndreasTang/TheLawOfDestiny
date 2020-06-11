@@ -13,7 +13,8 @@ const useStyles = makeStyles(() => ({
         backgroundImage: `url(${backgroundImage})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-        paddingTop: 20
+        paddingTop: 20,
+        paddingBottom: 20
     },
     paper: {
         width: '100%',
@@ -37,8 +38,10 @@ const useStyles = makeStyles(() => ({
 const Characters = () => {
 
     useEffect(() => {
+        console.log(process.env.PORT)
+        const readAllCharactersUrl = process.env.NODE_ENV !== 'production' ? 'http://localhost:8080/readAllCharacters' : 'https://the-law-of-destiny.herokuapp.com/readAllCharacters'
         async function fetchData() {
-            await fetch('http://localhost:8080/readAllCharacters')
+            await fetch(readAllCharactersUrl)
             .then((response) => {
                 return response.json()
             }).catch((error) => {

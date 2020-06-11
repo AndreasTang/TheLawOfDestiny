@@ -6,7 +6,11 @@ const router = new express.Router()
 router.post('/createCharacter', async (req, res) => {
 
     const characters = await Characters.find({}).sort({sortNum: -1}).limit(1)
-    const sortNum = characters[0].sortNum + 1
+    let sortNum = 1
+    
+    if (characters) {
+        sortNum = characters[0].sortNum + 1
+    }
 
     const newCharacter = new Characters({...req.body, sortNum})
 

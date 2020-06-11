@@ -28,7 +28,7 @@ router.get('/readAllCharacters', async (req, res) => {
     try {
 
         const characters = await Characters.find({})
-        res.send(characters)
+        res.status(200).send(characters)
 
     } catch(error) {
 

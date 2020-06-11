@@ -43,7 +43,13 @@ const Characters = () => {
         async function fetchData() {
             await fetch(readAllCharactersUrl)
             .then((response) => {
-                return response.json()
+                if (response.status === 200) {
+                    return response.json()
+                } else {
+                    setIsLoadFailed(true)
+                    return []
+                }
+                
             }).catch((error) => {
                 console.log(error)
             }).then((data) => {
@@ -60,6 +66,7 @@ const Characters = () => {
     const [sortDirection, setSortDirection] = useState('asc')
     const [sortBy, setSortBy] = useState('sortNum')
     const [isLoaded, setIsLoaded] = useState(false)
+    const [isLoadFailed, setIsLoadFailed] = useState(false)
     const [filters, setFilters] = useState({})
 
     const handleSort = (id) => {
@@ -175,7 +182,7 @@ const Characters = () => {
                 </Container>
             </Box>
         )
-    } else if (isLoaded && !datas.toString()) {
+    } else if (isLoaded && !isLoadFailed && !datas.toString()) {
         return (
             <Box className={classes.root}>
                 <Container maxWidth='lg'>
@@ -185,7 +192,16 @@ const Characters = () => {
                 </Container>
             </Box>
         )
-
+    }  else if (isLoaded && isLoadFailed) {
+        return (
+            <Box className={classes.root}>
+                <Container maxWidth='lg'>
+                    <Paper className={classes.paper}>
+                        <Typography>連結伺服器錯誤</Typography>
+                    </Paper>        
+                </Container>
+            </Box>
+        )
     } else {
         return (
             <Box className={classes.root}>

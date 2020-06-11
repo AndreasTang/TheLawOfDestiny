@@ -225,6 +225,7 @@ const DataProvider = () => {
             console.log(response.status)
             if (response.status === 201) {
                 alert('送出成功')
+                return response.json()
             }
             else {
                 alert(`送出失敗 伺服器回傳${response.status}`)

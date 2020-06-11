@@ -229,9 +229,12 @@ const DataProvider = () => {
             }
             else {
                 alert(`送出失敗 伺服器回傳${response.status}`)
+                return response.json()
             }
         }).catch((error) => {
             return error
+        }).then((result) => {
+            console.log(result)
         })
     }
 

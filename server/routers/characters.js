@@ -7,10 +7,13 @@ router.post('/createCharacter', async (req, res) => {
 
     const characters = await Characters.find({}).sort({sortNum: -1}).limit(1)
     let sortNum = 1
-    
-    if (characters) {
+
+    if (characters.length >= 1) {
+        console.log(characters)
         sortNum = characters[0].sortNum + 1
     }
+
+    console.log({...req.body, sortNum})
 
     const newCharacter = new Characters({...req.body, sortNum})
 

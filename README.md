@@ -2,7 +2,7 @@ This project is working in process, some features are not available right now.
 
 The goal of this project is to make a easy to use game database.
 
-The game itself can be find at https://play.google.com/store/apps/details?id=com.mover.zwfz&hl=zh_TW
+The game itself can be found at https://play.google.com/store/apps/details?id=com.mover.zwfz&hl=zh_TW
 
 ## How to use
 

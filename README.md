@@ -16,7 +16,9 @@ You can use 資料撰寫 page to add new characters datas to Mongodb, which will
 
 On 角色資訊 page, you can use Filter button on the right top corner of table to filter characters datas.
 
-You can sort all datas ascending or descending by click a little arrow button on each table row head.
+You can sort all datas ascending or descending by click a little arrow button beside each table row head.
+
+The below is a example of a sort arrow appear beside table row head.
 
 ![sortArrow]( https://i.imgur.com/B2W8HbC.png "sortArrow")
 

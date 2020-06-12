@@ -18,7 +18,7 @@ On 角色資訊 page, you can use Filter button on the right top corner of table
 
 You can sort all datas ascending or descending by click a little arrow button on each table row head.
 
-![GITHUB]( https://imgur.com/a/R7ihjHL "sortArrow")
+![sortArrow]( https://i.imgur.com/B2W8HbC.png "sortArrow")
 
 The sort arrow will appear when you hover on it.
 
